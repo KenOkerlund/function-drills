@@ -4,18 +4,16 @@
   feel free to practice with any syntax.
 */
 
-
 ////////////////// PROBLEM 1 ////////////////////
 /*
   Create a function called helloWorld which simply console logs 'Hello, World!'
   Call the function.
 */
 
-function helloWorld(){
-  return console.log("Hello, World!");
+function helloWorld() {
+  console.log("Hello, World!");
 }
 helloWorld();
-
 
 ////////////////// PROBLEM 2 ////////////////////
 
@@ -23,11 +21,7 @@ helloWorld();
     Write an arrow function called 'jsNinja' that returns the string: 'I am a JavaScript ninja!'
 */
 
-//CODE HERE
-//   const jsNinja = () => {
-//   return "I am a JavaScript ninja!";
-// }
-const jsNinja = () => "I am a javascript ninja!";
+const jsNinja = () => "I am a JavaScript ninja!";
 console.log(jsNinja());
 
 ////////////////// PROBLEM 3 ////////////////////
@@ -37,12 +31,10 @@ console.log(jsNinja());
   Call the function, passing in an argument.
 */
 
-function printName(name){
-  return console.log(name);
+function printName(name) {
+  console.log(name);
 }
-// console.log(printName("Ken"));
 printName("Ken");
-
 
 ////////////////// PROBLEM 4 ////////////////////
 /*
@@ -54,11 +46,8 @@ printName("Ken");
   Make sure to call your function and pass in an argument.
 */
 
-function greeting(name){
-  return console.log("Hello, " + name);
-}
-greeting("Josh");
-
+const greeting = (name) => console.log(`Hello, ${name}`);
+greeting("Kevin");
 
 ////////////////// PROBLEM 5 ////////////////////
 
@@ -71,37 +60,8 @@ greeting("Josh");
     Brownie points if you use a ternary statement (only spend significant time on this if you have wiggle room)
 */
 
-// function compareNums(num1, num2){
-//   if(num1 > num2){
-//     return num1;
-//   }
-//   else if(num2 > num1){
-//     return num2;
-//   }
-//   else{
-//     return num1;
-//   }
-// }
-// console.log(compareNums(2,2));
-
-
-function compareNums(num1, num2, num3){
-  return console.log(num1 > num2 ? num1 : num2 > num1 ? num2 : num3);
-}
-compareNums(2,2,5);
-
-
-/*
-// ask for 2 inputs. Check if num 1 is > num 2. the "?" is asking if it is true. If it is, return num 1, else return num2
-*/
-// const compareNums = (num1, num2) => num1 > num2 ? num1 : num2;
-// console.log(compareNums(3,2));
-
-// const compareNums = (num1, num2) => {
-//   return num1 > num2 ? num1 : num2;
-// }
-// console.log(compareNums(2,9));
-
+const compareNums = (num1, num2) => Math.max(num1, num2);
+console.log(compareNums(4, 15));
 
 ////////////////// PROBLEM 6 ////////////////////
 /*
@@ -111,10 +71,9 @@ compareNums(2,2,5);
   Create a variable outside the function called 'sum' and set it equal to add invoked (called), passing in 2 arguments.
 */
 
-function add(param1, param2) {
-  return console.log(Number(param1) + Number(param2));
-}
-add("1", 2);
+const add = (num1, num2) => Number(num1) + Number(num2);
+const sum = add(5, 7);
+console.log(sum);
 
 ////////////////// PROBLEM 7 ////////////////////
 
@@ -124,14 +83,12 @@ add("1", 2);
 */
 
 const exclaim = function (str) {
-  return str.toUpperCase() + '!!!'
-}
+  return str.toUpperCase() + "!!!";
+};
 
 // console.log('arrow')
 // console.log('declaration')
-console.log('expression');
-
-
+console.log("expression");
 
 ////////////////// PROBLEM 8 ////////////////////
 
@@ -140,11 +97,11 @@ console.log('expression');
   Uncomment the correct `console.log` underneath.
 */
 
-const exclaimTwo = str => {
-  return str.toUpperCase() + '!!!'
-}
+const exclaimTwo = (str) => {
+  return str.toUpperCase() + "!!!";
+};
 
-console.log('arrow');
+console.log("arrow");
 // console.log('declaration')
 // console.log('expression')
 
@@ -154,12 +111,8 @@ console.log('arrow');
 
   Brownie points if you use a template string
 */
-// const exclaimThree = str => str.toUpperCase() + `!!!`; 
-// console.log(exclaimThree(`this is a test`));
-
-const exclaimThree = str => console.log(`${str.toUpperCase()}!!!`); 
-exclaimThree(`this is a test`);
-
+const exclaimThree = (str) => `${str.toUpperCase()}!!!`;
+console.log(exclaimThree("Let's test this"));
 
 ////////////////// PROBLEM 9 ////////////////////
 
@@ -169,13 +122,12 @@ exclaimThree(`this is a test`);
 */
 
 function exclaimFour(str) {
-  return str.toUpperCase() + '!!!'
+  return str.toUpperCase() + "!!!";
 }
 
 // console.log('arrow')
-console.log('declaration')
+console.log("declaration");
 // console.log('expression')
-
 
 ////////////////// PROBLEM 10 ////////////////////
 /*
@@ -186,12 +138,17 @@ console.log('declaration')
   Create a variable called 'nameGreeting' and set it equal to your function invoked (called) passing in an argument.
 */
 
-const nameGreeting = "Ken"
-function nameCheck(name){
-  return console.log(name === "Steven" ? "What is up Steven" : name === "Bryan" ? "Hey Bryan!" : `Cool name, ${name}`);
+function nameCheck(name) {
+  if (name === "Steven") {
+    return "What is up Steven";
+  }
+  if (name === "Bryan") {
+    return "Hey, Bryan!";
+  }
+  return `Cool name, ${name}`;
 }
-nameCheck(nameGreeting);
-
+const nameGreeting = nameCheck("Bryan");
+console.log(nameGreeting);
 
 ////////////////// PROBLEM 11 ////////////////////
 /*
@@ -203,45 +160,36 @@ nameCheck(nameGreeting);
   Create a variable called 'colorRating' and set it equal to faveColorFinder invoked (called), passing in an argument.
 */
 
-// function faveColorFinder(color) {
-//   return color === 'red' ? 'red is a great color' : color === 'green' ? 'green is a solid favorite color' : color === 'black' ? 'so trendy' : 'you need to evaluate your color choice';
-// }
-
-// const colorRotating = faveColorFinder('blue');
-// console.log(colorRotating);
-
-function faveColorFinder(color){
-  if(color === 'red'){
-    return console.log('red is a great color');
+function faveColorFinder(color) {
+  if (color === "red") {
+    return "Red is a great color";
   }
-  else if(color ==='green'){
-    return console.log('green is a solid favorite color');
+  if (color === "green") {
+    return "Green is a solid favorite color";
   }
-  else if(color === 'black'){
-    return console.log('so trendy');
+  if (color === "black") {
+    return "So trendy!";
   }
-  else{
-    return console.log('you need to evaluate your favorite color choice');
-  }
+  return "You need to evaluate your favorite color choice";
 }
-const colorRating = 'blue';
-faveColorFinder(colorRating);
 
+const colorRating = faveColorFinder("red");
+console.log(colorRating);
 
 ////////////////// PROBLEM 12 ////////////////////
-let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl'];
+let namesArr = ["Cameron", "Riley", "Eric", "Brenna", "Karl"];
 /*
   Create a function called printAllNames that takes in a single argument (an array of names).
   Using a for loop, iterate over that array and console log each name.
   Call the function, passing in the `namesArr` array (above).
 */
 
-function printAllNames(names){
-  namesArr.forEach(name => {
-    return console.log(name);
+const printAllName = (arr) => {
+  arr.forEach((name) => {
+    console.log(name);
   });
-}
-printAllNames(namesArr);
+};
+printAllName(namesArr);
 
 ////////////////// PROBLEM 13 ////////////////////
 /*
@@ -251,11 +199,10 @@ printAllNames(namesArr);
   Outside the function, create a variable called `oddChecker` and set it equal to your function invoked, making sure to pass in an argument.
 */
 
-function thatsOdd(number){
-  return number %2 === 0 ? "That's not odd!" : 'That is odd indeed!';
-}
-const oddChecker = thatsOdd(2);
-console.log(oddChecker);
+const thatsOdd = (number) => {
+  return number % 2 === 0 ? `That's not odd!` : `That's odd indeed!`;
+};
+console.log(thatsOdd(4));
 
 ////////////////// PROBLEM 14 ////////////////////
 
@@ -267,15 +214,11 @@ console.log(oddChecker);
     we would expect the function to return 'Sharknado is the best movie ever!'
 */
 
-const bestMovie = title => console.log(`${title} is the best movie ever!`);
-bestMovie('Sharknado');
-
+const bestMovie = (movie) => `${movie} is the best movie ever!`;
+console.log(bestMovie("Megamind"));
 
 ////////////////// PROBLEM 15 ////////////////////
-
-
-//this one works but idk about the last line in the comment below
-let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
+let bigOrSmallArray = [1, 101, 102, 2, 103, 4, 5, 6, 107];
 /* 
   Create a function called 'bigOrSmall' that takes in one parameter, 'arr',  which will be an array of numbers. 
   Inside of the bigOrSmall function, create a new array called 'answers'. 
@@ -285,74 +228,52 @@ let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
   Return the answers array inside of the function to a variable called `arrayEvaluator`.
 */
 
-
-
-// need to learn more about returns vs console.log. Why can I not return answer in the function and then just call the function later instead of needing to console.log the function?
-function bigOrSmall(arr) {
-  const answer = [];
-  arr.forEach(number => {
-    if(number > 100){
-      answer.push('big');
-    }
-    else{
-      answer.push('small');
-    }
+const bigOrSmall = (arr) => {
+  const answers = [];
+  arr.forEach((index) => {
+    answers.push(index > 100 ? "BIG" : "small");
   });
-  return console.log(answer);
+  return answers;
 };
-
-let arrayEvaluator = bigOrSmall(bigOrSmallArray);
-arrayEvaluator;
-
-// function bigOrSmall(arr){
-//   const answers = [];
-//   for(let i = 0; i < arr.length; i++){
-//     if(arr[i] > 100){
-//       answers.push('BIG');
-//     }
-//     else{
-//       answers.push('small')
-//     }
-//   }
-//   return answers;
-// }
-// let arrayEvaluator = bigOrSmall(bigOrSmallArray);
-// console.log(arrayEvaluator);
+console.log(bigOrSmall(bigOrSmallArray));
 
 ////////////////// PROBLEM 16 ////////////////////
-
-// this one is not working yet
-// let contestants = ['Katniss', 'Peeta', 'Fox-face', 'Glimmer', 'Cato', 'Rue', 'Thresh', 'Clove', 'Marvel'];
-// let loser = 'Glimmer';
+let contestants = [
+  "Katniss",
+  "Peeta",
+  "Fox-face",
+  "Glimmer",
+  "Cato",
+  "Rue",
+  "Thresh",
+  "Clove",
+  "Marvel",
+];
+let loser = "Glimmer";
 /*
   Write a function that is called theEliminator, which takes in two arguments, contestants (which will each be an array of strings), and loser (which will be a string).
   The function should loop over the array of contestant names. If the loser string appears in the array, splice it out. Return the new contestants array.
 */
 
-
-// let test = ['1', '2', '3', '4', '5'];
-// let test2 = '3';
-// function testing(arr, num){
-// arr.forEach(number => {
-//   if(number === num){
-//     arr.splice(number - 1,1);
-//     console.log(number);
-//     console.log(arr);
-//   }
-// })
-// };
-// testing(test, test2);
+const theEliminator = (contestants, loser) => {
+  contestants.forEach((name, i) => {
+    if (name === loser) {
+      contestants.splice(i, 1);
+    }
+  });
+  return contestants;
+};
+console.log(theEliminator(contestants, loser));
 
 ////////////////// PROBLEM 17 ////////////////////
-let sampleString = "Hi, my name is Kylo."
+let sampleString = "Hi, my name is Kylo.";
 /*
   Write a function that takes in one argument, a string. The function should then console.log that string, in entirely uppercase characters.
   Invoke the function, passing in the sampleString (above).
 */
 
-const makeUpper = (string) => console.log(string.toUpperCase());
-makeUpper(sampleString);
-
+const toUpper = (string) => console.log(string.toUpperCase());
+toUpper(sampleString);
 
 ////////////////// PROBLEM 18 ////////////////////
 /*
@@ -365,89 +286,65 @@ makeUpper(sampleString);
   return 'must provide a valid email address'
 */
 
-//this one is not working yet
+const emailCheck = (email) => {
+  email = `${email}`.trim();
+  return email.includes("@")
+    ? "Email Verified"
+    : "Must provide a valid email address";
+};
 
-function emailCheck(email){
-  email = email.trim();
-  if(email.includes("@")){
-    return console.log('email verified');
-  }
-  else{
-    return console.log(email);
-  }
-}
-emailCheck("     ken gmail   ");
+console.log(emailCheck("Ken Gmail"));
+////////////////// PROBLEM 19 ////////////////////
 /*
-  Write a function, naming it whatever you believe to be appropriate, that buys as many chocolate frogs as possible with a certain amount of gold. 
-  Each chocolate frog costs 3 gold. Your function should take in a single parameter, which is the amount of gold you are willing to spend. 
-  Your function should return a total amount of chocolate frogs you were able to purchase.
+  Write a function, naming it whatever you believe to be appropriate, that buys as many chocolate frogs as possible with a certain amount of gold. Each chocolate frog costs 3 gold. 
+  Your function should take in a single parameter, which is the amount of gold you are willing to spend. Your function should return a total amount of chocolate frogs you were able to purchase.
   Create a variable called `totalFrogs` and set it equal to your function invoked, passing in the amount of gold you are willing to spend.
 */
 
-function buyFrogs(money){
+const buyFrogs = (spending) => {
   const gold = 1;
-  const frog = gold / 3 * money;
-  return console.log(frog);
-}
-const totalFrogs = buyFrogs(7);
-totalFrogs;
+  const frog = 3;
+  return Math.floor((gold / frog) * spending);
+};
 
+const totalFrogs = 11;
+console.log(buyFrogs(totalFrogs));
 
 ////////////////// PROBLEM 20 ////////////////////
 /*
-  You might have noticed a slight bug in the previous problem. If you were to pass in 4 gold, the function would return to you 1.3333...
-   However, you can't really go to a store and by 1.333 products. You would just be able to purchase 1 product. 
-   Re-write the function you used in the previous problem (give it the same name, just add a 2 to the end of it) that fixes this bug. 
-   Invoke the function and store the returned value to a variable called `totalFrogs2`.
+  You might have noticed a slight bug in the previous problem. If you were to pass in 4 gold, the function would return to you 1.3333... However, you can't really go to a store and by 1.333 products. 
+  You would just be able to purchase 1 product. Re-write the function you used in the previous problem (give it the same name, just add a 2 to the end of it) that fixes this bug. 
+  Invoke the function and store the returned value to a variable called `totalFrogs2`.
 */
 
-function buyFrogs2(money){
+const buyFrogs2 = (spending) => {
   const gold = 1;
-  const frog = Math.floor(gold / 3 * money);
-  return console.log(frog);
-}
-const totalFrogs2 = buyFrogs2(7);
-totalFrogs2;
+  const frog = 3;
+  return Math.floor((gold / frog) * spending);
+};
 
-function buyFrogs3(money){
-  return console.log(Math.floor(money / 3));
-}
-buyFrogs3(7);
-
+const totalFrogs2 = 11;
+console.log(buyFrogs(totalFrogs2));
 
 ////////////////// PROBLEM 21 ////////////////////
-let sampleArray = [0,1,2,3,4,7,5,6,8,9]
+let sampleArray = [0, 1, 2, 3, 4, 7, 5, 6, 8, 9];
 /*
   Write a function that takes in an array of numbers as an argument. In the body of the function, write logic to determine if the array is in ascending order. 
   The function should return true, if it is sorted in ascending order, false if it is not. Create a variable, `arrayIsAscending` and set it equal to your function invoked. 
   Use the sample array to test this function.
 */
 
-// really need to go back over this one.
-// function workArray(arr){
-//   let ascending = null;
-//   let arr2 = [];
-//   for(let i = 0; i < arr2.length; i++){
-//     if(ascending === null){
-//       let arr2 = arr.slice(1);
-//       ascending = arr2[i] > arr[i];
-//     }
-//   }
-//   return ascending ? 'True' : 'False'
-//   }
-// const arrayIsAscending = workArray(sampleArray);
-// console.log(arrayIsAscending);
-
-
- function workArray(arr){
-  for(let i = 0; i < arr.length; i++){
-  if(arr[i] > arr[i + 1]){
-    return console.log('false');
+const doesItAscend = (arr) => {
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] > arr[i + 1]) {
+      return false;
+    }
   }
-}
-return console.log('true');
-}
- workArray(sampleArray);
+  return true;
+};
+const arrayIsAscending = doesItAscend(sampleArray);
+console.log(arrayIsAscending);
+
 ////////////////// PROBLEM 22 ////////////////////
 
 let duck = "cute";
@@ -473,59 +370,10 @@ function pond() {
 let globalScope = ['duck'];
 
 //This array should contain the variable names (as strings) accessible in the bathroom function.
-let bathroomScope = ['duck', 'rubberDuck'];
+let bathroomScope = ['duck', 'rubberduck'];
 
 //This array should contain the variable names (as strings) accessible in the bathtub function.
-let bathtubScope = ['duck', 'rubberDuck', 'sailorDuck'];
+let bathtubScope = ['duck', 'rubberduck', 'sailorduck'];
 
 //This array should contain the variable names (as strings) accessible in the pond function.
-let pondScope = ['duck','realDuck']
-
-
-
-// let test = ['1', '2', '3', '4', '5'];
-// let test2 = '3';
-
-// function testing(arr, num){
-// arr.forEach(number => {
-//   if(number === num){
-//     arr.splice(number - 1,1);
-//     console.log(number);
-//     console.log(arr);
-//   }
-// })
-// };
-// testing(test, test2);
-
-
-// need to look into index here as the 2nd param in the forEach
-// also why does it work on '1'????
-let contestants = ['Katniss', 'Peeta', 'Fox-face', 'Glimmer', 'Cato', 'Rue', 'Thresh', 'Clove', 'Marvel'];
-let loser = 'Glimmer';
-
-function theEliminator(arr, lost){
-  arr.forEach((name, i) => {
-    if(name === lost){
-      arr.splice(i, 1);
-      console.log(name);
-      console.log(arr);
-    }
-  })
-};
-theEliminator(contestants, loser);
-
-
-
-let test = ['one', 'two', 'three', 'four', 'five'];
-let test2 = 'three';
-
-function testing(arr, num){
-arr.forEach((number, i) => {
-  if(number === num){
-    console.log(number);
-    arr.splice(i, 1);
-    console.log(arr);
-  }
-})
-};
-testing(test, test2);
+let pondScope = ['duck', 'realduck'];
